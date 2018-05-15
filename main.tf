@@ -47,7 +47,7 @@ data "google_compute_network" "network" {
 }
 
 module "nat-gateway" {
-  source            = "github.com/GoogleCloudPlatform/terraform-google-managed-instance-group"
+  source            = "github.com/GoogleCloudPlatform/terraform-google-managed-instance-group?ref=5455a58a38b4fd222e27d8c4045cb480dc38d88e"
   project           = "${var.project}"
   region            = "${var.region}"
   zone              = "${var.zone == "" ? lookup(var.region_params["${var.region}"], "zone") : var.zone}"
